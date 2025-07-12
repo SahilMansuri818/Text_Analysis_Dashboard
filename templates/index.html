@@ -1,0 +1,183 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analysis Tool</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --success: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--dark);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 2rem 0;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+        header p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+.card1 {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        input[type="url"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        input[type="url"]:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        }
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: var(--secondary);
+        }
+        .definitions {
+            margin-top: 2rem;
+        }
+        .definitions h2 {
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+        .metric {
+            background: #f8f9ff;
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary);
+        }
+        .metric h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .metric p {
+            color: #555;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Text Analysis Dashboard</h1>
+            <p>Analyze text content from any webpage for sentiment, readability, and linguistic features</p>
+        </header>
+
+        <main>
+            <div class="card">
+                <h2>Analyze a Webpage</h2>
+                <form action="/analyze" method="POST">
+                    <div class="form-group">
+                        <label for="url">Enter URL:</label>
+                        <input type="url" id="url" name="url" 
+                               placeholder="https://example.com/article" required>
+                    </div>
+                    <button type="submit">Analyze Content</button>
+                </form>
+            </div>
+
+
+
+
+         <div class="card1">
+                <h2>What is a text analysis tool </h2>
+                <form action="/analyze" method="POST">
+                    <div class="form-group">
+                        <label for="url">Text Analysis Tool is a Natural Language Processing (NLP) project that extracts text from the website whose link you have given and performs these twelve operations on it</label>
+             
+                    </div>
+                   
+                </form>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="card definitions">
+                <h2>Text Analysis Metrics Explained</h2>
+                {% for metric, definition in definitions.items() %}
+                <div class="metric">
+                    <h3>{{ metric.replace('_', ' ').title() }}</h3>
+                    <p>{{ definition }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </main>
+
+        <footer>
+            <p>Text Analysis Tool &copy; 2025 | Created By Sahil Mansuri</p>
+        </footer>
+    </div>
+</body>
+</html>

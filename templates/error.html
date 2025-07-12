@@ -1,0 +1,62 @@
+<!-- templates/error.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Occurred</title>
+    <style>
+        /* Reuse styles from index.html with some additions */
+        :root {
+            --primary: #4361ee;
+            --error: #e63946;
+        }
+        .error-card {
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .error-card1 {
+            text-align: center;
+            padding: 3rem;
+        }
+
+
+        .error-icon {
+            font-size: 4rem;
+            color: var(--error);
+            margin-bottom: 1.5rem;
+        }
+        .error-message {
+            background: #ffeef0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--error);
+            margin: 2rem 0;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Analysis Error</h1>
+        </header>
+
+        <main>
+            <div class="card error-card">
+                <div class="error-icon">⚠️</div>
+                <h2>Something Went Wrong</h2>
+                
+                <div class="error-message">
+                    {{ error }}
+                </div>
+                
+                <button onclick="window.location.href='/'">
+                    Try Again
+                </button>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
