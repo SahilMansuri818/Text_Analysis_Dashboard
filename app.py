@@ -1,4 +1,10 @@
 # app.py
+# Fix for pkgutil.ImpImporter
+try:
+    import fix_importer
+except ImportError:
+    pass
+
 from flask import Flask, render_template, request, send_file
 from your import analyze_url
 import pandas as pd
